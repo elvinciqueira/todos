@@ -1,6 +1,7 @@
 const addForm = document.querySelector('.add');
 const list = document.querySelector('.todos');
 
+//adding todos
 addForm.addEventListener('submit', event => {
   event.preventDefault();
 
@@ -8,8 +9,15 @@ addForm.addEventListener('submit', event => {
 
   if(todo.length) {
     generateTemplate(todo);
-    
+
     addForm.reset();
+  }
+});
+
+//deleting todos
+list.addEventListener('click', event => {
+  if(event.target.classList.contains('delete')) {
+    event.target.parentElement.remove();
   }
 });
 
